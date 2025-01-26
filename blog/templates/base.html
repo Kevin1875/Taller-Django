@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Django</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">
+          <a href="{% url 'home' %}">Blog de Django</a>
+        </h1>
+        <nav class="navigation">
+          <ul class="nav-list">
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="#">Sobre mí</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Blog de Django. Todos los derechos reservados.</p>
+        <p>Creado con <a href="https://www.djangoproject.com/" target="_blank">Django</a>.</p>
+      </div>
+    </footer>
+  </body>
+</html>
